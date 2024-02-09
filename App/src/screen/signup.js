@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { useContext } from 'react';
+// import { ThemeContext } from '../Components/theme';
 
-const SignupScreen = ({ navigation }) => {
+const Signup = ({ navigation }) => {
+    // const { isDark, toggleTheme } = useContext(ThemeContext);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -39,13 +41,14 @@ const SignupScreen = ({ navigation }) => {
                 secureTextEntry
             />
             <Button title="Sign Up" onPress={handleSignup} />
-            <Button title="Toggle Dark Mode" onPress={toggleTheme} />
+            {/* <Button title="Toggle Dark Mode" onPress={toggleTheme} /> */}
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        // backgroundColor: isDark ? '#121212' : '#FFFFFF',
         flex: 1,
         justifyContent: 'center',
         padding: 20,
@@ -64,4 +67,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SignupScreen;
+export default Signup;

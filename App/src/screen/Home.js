@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet,Button } from 'react-native';
 import { useContext } from 'react';
+import { AuthContext } from '../Components/theme';
 
 const medicines = [
     { id: '1', name: 'Citracin', date: '2022-01-01', time: '08:00 AM' },
@@ -10,10 +11,12 @@ const handleEdits = () => {
     console.log("Had Medicine");
 }
 
+
 const Home = ({ navigation }) => {
+    const { dark, toggleDark } = useContext(AuthContext);
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Medicine Reminders</Text>
+        <View style={(dark)?styles.container_dark : styles.container}>
+            <Text style={styles.title}>Medicine Reminders {(dark)?"dark":"light"}</Text>
             <FlatList
                 data={medicines}
                 keyExtractor={item => item.id}
@@ -23,19 +26,28 @@ const Home = ({ navigation }) => {
                         <Text style={styles.date}>{item.date}</Text>
                         <Text style={styles.time}>{item.time}</Text>
                         <Button title="Done" onPress={handleEdits} />
+                        <Button title="Toggle Dark Mode" onPress={()=>{toggleDark()}} />
                     </View>
                 )}
             />
         </View>
     );
 }
-
+``
 const styles = StyleSheet.create({
-    container: {
+    container_dark: {
+        backgroundColor:'#000000',
         flex: 1,
         paddingTop: 50,
         paddingHorizontal: 20,
-        backgroundColor: '#F5FCFF',
+        // backgroundColor: '#F5FCFF',
+    },
+    container:{
+        backgroundColor:'#FFFFFF',
+        flex: 1,
+        paddingTop: 50,
+        paddingHorizontal: 20,
+        // backgroundColor: '#F5FCFF',
     },
     title: {
         fontSize: 24,
