@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet,Button } from 'react-native';
 import { useContext } from 'react';
-import { ThemeContext } from '../Components/theme';
 
 const medicines = [
     { id: '1', name: 'Citracin', date: '2022-01-01', time: '08:00 AM' },
@@ -12,7 +11,6 @@ const handleEdits = () => {
 }
 
 const Home = ({ navigation }) => {
-    const { isDark, toggleTheme } = useContext(ThemeContext);
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Medicine Reminders</Text>
@@ -35,7 +33,6 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: isDark ? '#121212' : '#FFFFFF',
         flex: 1,
         paddingTop: 50,
         paddingHorizontal: 20,

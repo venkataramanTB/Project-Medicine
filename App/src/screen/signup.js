@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { useContext } from 'react';
-import { ThemeContext } from '../Components/theme';
 
 const SignupScreen = ({ navigation }) => {
-    const { isDark, toggleTheme } = useContext(ThemeContext);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSignup = () => {
-        if (username && email && password) {
-            // Handle signup logic here
+        if (username && email && password) {  
             Alert.alert('Success', 'Account created successfully');
             navigation.navigate('Login');
         } else {
@@ -49,7 +46,6 @@ const SignupScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: isDark ? '#121212' : '#FFFFFF',
         flex: 1,
         justifyContent: 'center',
         padding: 20,
