@@ -23,7 +23,6 @@ const Home = ({ navigation }) => {
                         <Text style={styles.date}>{item.date}</Text>
                         <Text style={styles.time}>{item.time}</Text>
                         <Button title="Done" onPress={handleEdits} />
-                        <Button title="Toggle Dark Mode" onPress={toggleTheme} />
                     </View>
                 )}
             />
