@@ -9,7 +9,7 @@ const medicines = [
 ];
 
 const handleEdits = () => {
-    console.log("Had Medicine");
+    console.log("Had" );
 }
 
 const Home = ({ navigation }) => {
