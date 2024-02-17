@@ -1,12 +1,14 @@
- import React, {createContext, useEffect, useState, useNavigate} from "react";
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, {createContext, useEffect, useState, useNavigate} from "react";
 export const AuthContext = createContext();
 export const AuthProvider=({children})=>{
     const [dark, setDark] = useState(false);
     const toggleDark = () => {
-        console.log("first")
         setDark(!dark);
-        console.log(dark);
+        if (dark) {
+            console.log("Light Mode");
+        } else {
+            console.log("Dark Mode");
+        }
     }
     return(
         <AuthContext.Provider value = {{dark, toggleDark}}>
