@@ -4,6 +4,7 @@ import capsulesImage from '../../assets/capsules.png';
 import { AuthContext } from '../Components/theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Toast from 'react-native-root-toast';
+import AuroraBackground from '../Components/aurora_bg';
 
 const WelcomeScreen = ({ route, navigation }) => {
     const { username } = route.params;
@@ -57,6 +58,7 @@ const WelcomeScreen = ({ route, navigation }) => {
 
     return (
         <View style={dark ? styles.container_dark : styles.container}>
+            <AuroraBackground mode={dark ? 'dark' : 'light'} />
             <Animated.Image 
                 style={[styles.image, { transform: [{ scale }] }]}
                 source={capsulesImage}

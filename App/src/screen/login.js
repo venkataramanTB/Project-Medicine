@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../Components/theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Toast from 'react-native-toast-message';
+import AuroraBackground from '../Components/aurora_bg';
 
 const Login = ({ navigation }) => {
     const { dark, toggleDark } = useContext(AuthContext);
@@ -31,9 +32,11 @@ const Login = ({ navigation }) => {
             });
         }
     };
+    
 
     return (
-        <View style={dark ? styles.container_dark : styles.container}>
+            <View style={{ flex: 1, margin: 0, padding: 0 }}>
+            <AuroraBackground mode={dark ? 'dark' : 'light'} />
             <View style={styles.header}>
                 <Text style={dark ? styles.title_dark : styles.title}>Medicine Reminders</Text>
                 <TouchableOpacity onPress={toggleDark}>

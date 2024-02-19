@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import Toast from 'react-native-toast-message';
 import checkIcon from '../../assets/check_success.gif';
+import AuroraBackground from '../Components/aurora_bg';
 
 const medicines = [
     { id: '1', name: 'Citracin', date: '2022-01-01', time: '08:00 AM' },
@@ -55,6 +56,7 @@ const Home = ({ navigation }) => {
 
     return (
         <View style={dark ? styles.container_dark : styles.container}>
+            <AuroraBackground mode={dark ? 'dark' : 'light'} />
             {showConfetti && (
                 <ConfettiCannon count={200} origin={{ x: -10, y: 0 }} explosionSpeed={350} fallSpeed={3000} colors={['#ff0', '#0f0', '#0ff', '#f0f', '#f00']} fadeOut={true} />
             )}

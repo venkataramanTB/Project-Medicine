@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../Components/theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Toast from 'react-native-toast-message';
+import AuroraBackground from '../Components/aurora_bg';
 
 const Signup = ({ navigation }) => {
     const { dark, toggleDark } = useContext(AuthContext);
@@ -35,6 +36,7 @@ const Signup = ({ navigation }) => {
 
     return (
         <View style={dark ? styles.container_dark : styles.container}>
+            <AuroraBackground mode={dark ? 'dark' : 'light'} />
             <View style={styles.header}>
                 <Text style={dark ? styles.title_dark : styles.title}>Create an Account</Text>
                 <TouchableOpacity onPress={toggleDark}>
